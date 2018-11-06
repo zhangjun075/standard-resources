@@ -1,0 +1,60 @@
+server:
+  port: 8088
+  undertow:
+    io-threads: 16
+    worker-threads: 2000
+    direct-buffers: true
+    max-http-post-size: 2000
+  compression:
+    enabled: true
+spring:
+  application:
+    name: merchant-rebate
+  datasource:
+    hikari:
+      connection-test-query: select 1
+      auto-commit: true
+      jdbc-url: jdbc:mysql://10.114.24.237:3306/rebate?characterEncoding=utf8
+      username: root
+      password: 123456
+      connection-init-sql: select 1
+      pool-name: merchant-rebate
+      driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3309/library
+# ENDPOINTS CORS CONFIGURATION (CorsEndpointProperties)
+management:
+  endpoints:
+    web:
+      cors:
+        allowed-headers: /*
+        allowed-methods: /*
+        allowed-origins: /*
+# eureka
+eureka:
+  instance:
+    hostname: merchant-rebate
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}  # 在2.0以上的版本需要instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://10.114.24.203:8081/eureka/,http://10.114.24.204:8081/eureka/,http://10.114.24.207:8081/eureka/
+    registry-fetch-interval-seconds: 30
+    eureka-service-url-poll-interval-seconds: 10
+ribbon:
+  MaxAutoRetriesNextServer: -1
+feign:
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enabled: true # You may consider enabling the request or response GZIP compression for your Feign requests. You can do this by enabling one of the properties:
+    response:
+      enabled: true
+
+# datasource
