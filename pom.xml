@@ -318,7 +318,7 @@
                   <!--<name>com.xxx.tars.config.TangleFreeGeneratorStrategy</name>-->
                 <!--</strategy>-->
                 <target>
-                  <packageName>com.ppdai.tars</packageName>
+                  <packageName>com.xx.tars</packageName>
                   <directory>${basedir}/gensrc/main/java</directory>
                 </target>
                 <generate>
