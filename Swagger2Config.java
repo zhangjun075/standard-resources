@@ -1,4 +1,4 @@
-package com.ppdai.tars.config;
+package com.xx.tars.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ppdai.tars.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.xx.tars.web"))
                 .paths(PathSelectors.any())
                 .build();
     }
