@@ -1,4 +1,4 @@
-package com.ppdai.tars.config;
+package com.xx.tars.config;
 
 import ma.glasnost.orika.Converter;
 import ma.glasnost.orika.Mapper;
