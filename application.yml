@@ -14,7 +14,7 @@ spring:
     hikari:
       connection-test-query: select 1
       auto-commit: true
-      jdbc-url: jdbc:mysql://10.114.24.237:3306/rebate?characterEncoding=utf8
+      jdbc-url: jdbc:mysql://xxx:3306/rebate?characterEncoding=utf8
       username: root
       password: 123456
       connection-init-sql: select 1
@@ -43,7 +43,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://10.114.24.203:8081/eureka/,http://10.114.24.204:8081/eureka/,http://10.114.24.207:8081/eureka/
+      defaultZone: http://xxx:8081/eureka/,http://xxx:8081/eureka/,http://xxx:8081/eureka/
     registry-fetch-interval-seconds: 30
     eureka-service-url-poll-interval-seconds: 10
 ribbon:
