@@ -1,4 +1,4 @@
-package com.ppdai.tars;
+package com.xx.tars;
 
 import feign.Request;
 import org.springframework.boot.SpringApplication;
