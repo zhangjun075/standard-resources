@@ -249,7 +249,7 @@
                 <inherited>false</inherited>
                 <configuration>
                   <includes>
-                    <include>com/ppdai/tars/**</include>
+                    <include>com/xxx/xxx/**</include>
                   </includes>
                 </configuration>
               </execution>
@@ -302,7 +302,7 @@
             <configuration>
               <jdbc>
                 <driver>com.mysql.jdbc.Driver</driver>
-                <url>jdbc:mysql://10.114.24.237:3306</url>
+                <url>xxxx</url>
                 <user>root</user>
                 <password>123456</password>
               </jdbc>
@@ -315,7 +315,7 @@
                   <inputSchema>rebate</inputSchema>
                 </database>
                 <!--<strategy>-->
-                  <!--<name>com.ppdai.tars.config.TangleFreeGeneratorStrategy</name>-->
+                  <!--<name>com.xxx.tars.config.TangleFreeGeneratorStrategy</name>-->
                 <!--</strategy>-->
                 <target>
                   <packageName>com.ppdai.tars</packageName>
