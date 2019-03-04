@@ -2,9 +2,9 @@ server:
   port: 8088
   undertow:
     io-threads: 16
-    worker-threads: 2000
+    worker-threads: 1000
     direct-buffers: true
-    max-http-post-size: 2000
+    max-http-post-size: 1000
   compression:
     enabled: true
 spring:
