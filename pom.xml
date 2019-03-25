@@ -36,6 +36,8 @@
     <mysql.connector.version>5.1.46</mysql.connector.version>
     <orika.version>1.5.0</orika.version>
     <swagger.version>2.5.0</swagger.version>
+    <lombok.version>1.18.6</lombok.version>
+    <jooq.version>3.11.10</jooq.version>
   </properties>
 
   <dependencies>
@@ -83,6 +85,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
     </dependency>
 
     <!--feign client-->
@@ -115,12 +118,37 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jooq</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.jooq</groupId>
+          <artifactId>jooq</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.jooq</groupId>
+          <artifactId>jooq-meta</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- Provided -->
     <dependency>
       <groupId>org.jooq</groupId>
       <artifactId>jooq-codegen</artifactId>
+      <version>${jooq.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq</artifactId>
+      <version>${jooq.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq-meta</artifactId>
+      <version>${jooq.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -285,6 +313,7 @@
           <plugin>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen-maven</artifactId>
+            <version>${jooq.version}</version>
             <executions>
               <execution>
                 <goals>
@@ -309,7 +338,7 @@
               <generator>
                 <name>org.jooq.util.DefaultGenerator</name>
                 <database>
-                  <name>org.jooq.util.mysql.MySQLDatabase</name>
+                  <name>org.jooq.meta.mysql.MySQLDatabase</name>
                   <includes>.*</includes>
                   <excludes />
                   <inputSchema>rebate</inputSchema>
