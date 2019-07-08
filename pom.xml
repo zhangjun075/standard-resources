@@ -336,7 +336,6 @@
                 <password>123456</password>
               </jdbc>
               <generator>
-                <name>org.jooq.util.DefaultGenerator</name>
                 <database>
                   <name>org.jooq.meta.mysql.MySQLDatabase</name>
                   <includes>.*</includes>
