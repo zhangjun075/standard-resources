@@ -33,7 +33,7 @@
     <spring.cloud.starter.version>2.0.0.M2</spring.cloud.starter.version>
     <hikaricp.version>3.1.0</hikaricp.version>
     <maven.test.skip>true</maven.test.skip>
-    <mysql.connector.version>5.1.46</mysql.connector.version>
+    <mysql.connector.version>8.0.16</mysql.connector.version>
     <orika.version>1.5.0</orika.version>
     <swagger.version>2.5.0</swagger.version>
     <lombok.version>1.18.6</lombok.version>
